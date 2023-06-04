@@ -1,0 +1,2 @@
+class MistakeOutException(Exception):
+    pass
