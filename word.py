@@ -1,16 +1,15 @@
-from abc import ABC, abstractmethod
-
-
-class Word(ABC):
-
-    @abstractmethod
+class Word:
     def guess(self, char: str) -> bool:
+        if hasattr(self, '_origin') is not None and hasattr(self._origin, 'guess') is not None:
+            return self._origin.guess(char)
         pass
 
-    @abstractmethod
     def done(self) -> bool:
+        if hasattr(self, '_origin') is not None and hasattr(self._origin, 'done') is not None:
+            return self._origin.done()
         pass
 
-    @abstractmethod
     def describe(self) -> str:
+        if hasattr(self, '_origin') is not None and hasattr(self._origin, 'describe') is not None:
+            return self._origin.describe()
         pass

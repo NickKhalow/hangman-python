@@ -10,12 +10,6 @@ class WdMistakes(Word):
         self._max = max_attempts
         self._mistakes = 0
 
-    def done(self) -> bool:
-        return self._origin.done()
-
-    def describe(self) -> str:
-        return self._origin.describe()
-
     def guess(self, char: str) -> bool:
         success = self._origin.guess(char)
         if not success:
